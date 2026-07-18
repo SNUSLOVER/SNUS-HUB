@@ -33,7 +33,7 @@ GamesTab:CreateSection("Choose Game")
 GamesTab:CreateButton({
     Name = "99 Nights in the Forest",
     Callback = function()
-        Rayfield:Notify({Title = "Loading...", Content = "99 Nights in the Forest...", Duration = 4})
+        Rayfield:Notify({Title = "Loading...", Content = "99 Nights in the Forest SNUS-HUB...", Duration = 4})
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-99-Nights-in-the-Forest/refs/heads/main/snushub-99nights.lua", true))()
     end,
 })
@@ -41,7 +41,7 @@ GamesTab:CreateButton({
 GamesTab:CreateButton({
     Name = "Gakuran",
     Callback = function()
-        Rayfield:Notify({Title = "Loading...", Content = "Gakuran Precision Parry...", Duration = 4})
+        Rayfield:Notify({Title = "Loading...", Content = "Gakuran SNUS-HUB...", Duration = 4})
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Gakuran/refs/heads/main/snushub-gakuran.lua", true))()
     end,
 })
@@ -49,24 +49,38 @@ GamesTab:CreateButton({
 GamesTab:CreateButton({
     Name = "Sabershowdown",
     Callback = function()
-        Rayfield:Notify({Title = "Loading...", Content = "Sabershowdown...", Duration = 4})
+        Rayfield:Notify({Title = "Loading...", Content = "Sabershowdown SNUS-HUB..", Duration = 4})
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Sabershowdown/refs/heads/main/SNUS-HUB-SABERSHOWDOWN.lua", true))()
     end,
 })
 
 GamesTab:CreateButton({
-    Name = "Pianist",
+    Name = "Auto Piano",
     Callback = function()
-        Rayfield:Notify({Title = "Loading...", Content = "Loading Pianist...", Duration = 4})
+        Rayfield:Notify({Title = "Loading...", Content = "Auto Piano SNUS-HUB...", Duration = 4})
         local success, err = pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
-        end)
-        if not success then
-            Rayfield:Notify({Title = "Error", Content = "Pianist failed to load", Duration = 5})
-        end
-    end,
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
+     end,
 })
 
+GamesTab:CreateButton({
+    Name = "Phantom Forces",
+    Callback = function()
+        Rayfield:Notify({Title = "Loading...", Content = "Homohack Hub (Credits to dementiaenjoyer)...", Duration = 4})
+        local success, err = pcall(function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ea77de328f41d48ad5385698897988b1.lua", true))()
+     end,
+})
+
+GamesTab:CreateButton({
+    Name = "Sniper Duels",
+    Callback = function()
+        Rayfield:Notify({Title = "Loading...", Content = "Loading Script...", Duration = 4})
+        local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-SniperDuels/refs/heads/main/SniperDuels.lua", true))()
+     end,
+})
+                
 GamesTab:CreateSection("More Games Coming Soon...")
 
 Rayfield:Notify({
