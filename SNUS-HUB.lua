@@ -54,7 +54,7 @@ GamesTab:CreateButton({
         Rayfield:Notify({Title = "Loading...", Content = "Piano Helper...", Duration = 4})
         
         local success, err = pcall(function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
         end)
 })
 
