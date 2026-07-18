@@ -48,7 +48,7 @@ GamesTab:CreateButton({
 
 -- Pianist
 GamesTab:CreateButton({
-    Name = "Pianist (Auto piano player)",
+    Name = "Pianist",
     Callback = function()
         Rayfield:Notify({Title = "Loading...", Content = "Piano Helper...", Duration = 4})
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua"))()
