@@ -8,6 +8,11 @@ local Window = Rayfield:CreateWindow({
     LoadingTitle = "SNUS-HUB",
     LoadingSubtitle = "by SNUSLOVER",
     Theme = "Amethyst",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = "SNUS-HUB_Config",
+        FileExtension = "json"
+    }
 })
 
 Rayfield:Notify({
@@ -47,15 +52,18 @@ GamesTab:CreateButton({
     end,
 })
 
--- Pianist (FIXED)
+-- Pianist
 GamesTab:CreateButton({
     Name = "Pianist",
     Callback = function()
         Rayfield:Notify({Title = "Loading...", Content = "Piano Helper...", Duration = 4})
-        
         local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
         end)
+        if not success then
+            Rayfield:Notify({Title = "Error", Content = "Failed to load Pianist: " .. tostring(err), Duration = 6})
+        end
+    end,
 })
 
 GamesTab:CreateSection("More Games Soon")
