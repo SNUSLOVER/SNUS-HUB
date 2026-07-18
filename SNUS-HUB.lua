@@ -12,12 +12,17 @@ local Window = Rayfield:CreateWindow({
         Enabled = true,
         FolderName = "SNUS-HUB_Config",
         FileExtension = "json"
-    }
+    },
+    DisableConflictingUI = true,   -- Important for Solara
+    HidePremium = false
 })
+
+-- Small delay for Solara stability
+task.wait(0.5)
 
 Rayfield:Notify({
     Title = "SNUS-HUB",
-    Content = "Select your game!",
+    Content = "Welcome! | Executor: Solara",
     Duration = 6
 })
 
@@ -25,7 +30,6 @@ local GamesTab = Window:CreateTab("🎮 Games", 4483362458)
 
 GamesTab:CreateSection("Choose Game")
 
--- 99 Nights in the Forest
 GamesTab:CreateButton({
     Name = "99 Nights in the Forest",
     Callback = function()
@@ -34,7 +38,6 @@ GamesTab:CreateButton({
     end,
 })
 
--- Gakuran
 GamesTab:CreateButton({
     Name = "Gakuran",
     Callback = function()
@@ -43,33 +46,31 @@ GamesTab:CreateButton({
     end,
 })
 
--- Sabershowdown
 GamesTab:CreateButton({
     Name = "Sabershowdown",
     Callback = function()
-        Rayfield:Notify({Title = "Loading...", Content = "Sabershowdown exploit...", Duration = 4})
+        Rayfield:Notify({Title = "Loading...", Content = "Sabershowdown...", Duration = 4})
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Sabershowdown/refs/heads/main/SNUS-HUB-SABERSHOWDOWN.lua", true))()
     end,
 })
 
--- Pianist
 GamesTab:CreateButton({
     Name = "Pianist",
     Callback = function()
-        Rayfield:Notify({Title = "Loading...", Content = "Piano Helper...", Duration = 4})
+        Rayfield:Notify({Title = "Loading...", Content = "Loading Pianist...", Duration = 4})
         local success, err = pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
         end)
         if not success then
-            Rayfield:Notify({Title = "Error", Content = "Failed to load Pianist: " .. tostring(err), Duration = 6})
+            Rayfield:Notify({Title = "Error", Content = "Pianist failed to load", Duration = 5})
         end
     end,
 })
 
-GamesTab:CreateSection("More Games Soon")
+GamesTab:CreateSection("More Games Coming Soon...")
 
 Rayfield:Notify({
     Title = "SNUS-HUB",
-    Content = "Hub loaded successfully!",
+    Content = "Hub loaded successfully on Solara!",
     Duration = 8
 })
