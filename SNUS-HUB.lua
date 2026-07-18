@@ -56,15 +56,6 @@ GamesTab:CreateButton({
         local success, err = pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
         end)
-        
-        if not success then
-            Rayfield:Notify({
-                Title = "❌ Error",
-                Content = "Pianist failed to load:\n" .. tostring(err),
-                Duration = 8
-            })
-        end
-    end,
 })
 
 GamesTab:CreateSection("More Games Soon")
