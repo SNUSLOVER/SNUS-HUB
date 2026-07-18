@@ -17,6 +17,7 @@ Rayfield:Notify({
 })
 
 local GamesTab = Window:CreateTab("🎮 Games", 4483362458)
+
 GamesTab:CreateSection("Choose Game")
 
 -- 99 Nights in the Forest
@@ -24,7 +25,7 @@ GamesTab:CreateButton({
     Name = "99 Nights in the Forest",
     Callback = function()
         Rayfield:Notify({Title = "Loading...", Content = "99 Nights in the Forest...", Duration = 4})
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-99-Nights-in-the-Forest/refs/heads/main/snushub-99nights.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-99-Nights-in-the-Forest/refs/heads/main/snushub-99nights.lua", true))()
     end,
 })
 
@@ -33,7 +34,7 @@ GamesTab:CreateButton({
     Name = "Gakuran",
     Callback = function()
         Rayfield:Notify({Title = "Loading...", Content = "Gakuran Precision Parry...", Duration = 4})
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Gakuran/refs/heads/main/snushub-gakuran.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Gakuran/refs/heads/main/snushub-gakuran.lua", true))()
     end,
 })
 
@@ -42,16 +43,27 @@ GamesTab:CreateButton({
     Name = "Sabershowdown",
     Callback = function()
         Rayfield:Notify({Title = "Loading...", Content = "Sabershowdown exploit...", Duration = 4})
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Sabershowdown/refs/heads/main/SNUS-HUB-SABERSHOWDOWN.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Sabershowdown/refs/heads/main/SNUS-HUB-SABERSHOWDOWN.lua", true))()
     end,
 })
 
--- Pianist
+-- Pianist (FIXED)
 GamesTab:CreateButton({
     Name = "Pianist",
     Callback = function()
         Rayfield:Notify({Title = "Loading...", Content = "Piano Helper...", Duration = 4})
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua"))()
+        
+        local success, err = pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/SNUSLOVER/SNUS-HUB-Pianist/refs/heads/main/SNUS-HUB-PIANIST.lua", true))()
+        end)
+        
+        if not success then
+            Rayfield:Notify({
+                Title = "❌ Error",
+                Content = "Pianist failed to load:\n" .. tostring(err),
+                Duration = 8
+            })
+        end
     end,
 })
 
