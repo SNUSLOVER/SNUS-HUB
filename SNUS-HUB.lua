@@ -22,7 +22,7 @@ task.wait(0.5)
 
 Rayfield:Notify({
     Title = "SNUS-HUB",
-    Content = "Welcome! | Executor: Solara",
+    Content = "Welcome!",
     Duration = 6
 })
 
